@@ -1,0 +1,48 @@
+<html lang="Ru-ru">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+    <title>Lab 1</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <h1 align="center">Введите дату вашего рождения</h1>
+    <div id="DateInput" align="center">
+        <input id = "dayInput" type = "number" min = "1" max = "31" step = "1" value = "1" />
+        <select id = "monthSelect"
+                onchange = 'SetMaxDaysCount(
+                    "dayInput",
+                    document.getElementById("monthSelect").selectedIndex + 1,
+                    parseInt(document.getElementById("yearInput").value))'>
+            <option>Январь</option>
+            <option>Февраль</option>
+            <option>Март</option>
+            <option>Апрель</option>
+            <option>Май</option>
+            <option>Июнь</option>
+            <option>Июль</option>
+            <option>Август</option>
+            <option>Сентябрь</option>
+            <option>Октябрь</option>
+            <option>Ноябрь</option>
+            <option>Декабрь</option>
+        </select>
+        <input id = "yearInput" type = "number" min = "1920" max = "2018" step = "1" value="2000"
+               onchange = 'SetMaxDaysCount(
+                   "dayInput",
+                   document.getElementById("monthSelect").selectedIndex + 1,
+                   parseInt(document.getElementById("yearInput").value))' />
+    </div>
+    <div id="Response" align="center">
+        <h3 id="responseNumberFromPHP"></h3>
+        <p id="responseTextFromPHP"></p>
+    </div>
+
+    <div style="text-align: center;">
+        <button onclick='GetMagicNumberFromPHP(
+            parseInt(document.getElementById("dayInput").value),
+            parseInt(document.getElementById("monthSelect").selectedIndex + 1),
+            parseInt(document.getElementById("yearInput").value),
+            "responseTextFromPHP")'> Узнать данные!</button>
+        </div>
+</body>
+</html>
