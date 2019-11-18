@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>lab 1</title>
+    <h1 align="center">Введите ваши даные</h1>
+    <div>
+<form method="post">
+    <div id="communal">
+        <button  type="submit">Цена</button>
+    </div>
+    <div class="three fields">
+        <div class="field">
+            <label>До</label>
+            <input type="number" name="значение за прошлый месяц " placeholder="значение за прошлый месяц">
+        </div>
+        <div class="field">
+            <label>После</label>
+            <input type="number" name="значение за текущий месяц" placeholder="значение за текущий месяц">
+        </div>
+        <div class="field">
+            <label>Тариф</label>
+            <input type="number" name="тариф" placeholder="тариф">
+        </div>
+    </div>
+</form>
+<?php
+	   if(is_numeric($_POST["значение за прошлый месяц"]) && is_numeric($_POST["значение за текущий месяц"]) && is_numeric($_POST["значение за текущий месяц"]))
+	   {
+		$Sum = ($_POST["значение за текущий месяц"] - $_POST["значение за прошлый месяц"]) * $_POST["тариф"];
+	   }
+	   echo $Sum;
+      ?>
+</div>
+</p>
+</div>
+</div>
+</body>
+</head>
+</html>
+
+
